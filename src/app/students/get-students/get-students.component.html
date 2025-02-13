@@ -1,0 +1,34 @@
+<div class="header">
+  <button class="back-button" routerLink="/">Powrót</button>
+  <img src="assets/logo.png" alt="Logo" class="logo" (click)="goToDashboard()">
+</div>
+
+<div class="container">
+  <h2>Lista studentów</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Język</th>
+      <th>Usunięty?</th>
+      <th>ID nauczyciela</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.language }}</td>
+      <td>{{ student.removed ? 'Tak' : 'Nie' }}</td>
+      <td>{{ student.teacherId }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</div>

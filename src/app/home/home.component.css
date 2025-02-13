@@ -1,0 +1,225 @@
+header {
+  background: #005792;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.logo img {
+  height: 100px;
+  display: block;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item > a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 18px;
+  display: block;
+  font-size: 1.2em;
+  transition: background 0.3s ease-in-out;
+}
+
+.menu-item > a:hover {
+  background: #014f86;
+  border-radius: 4px;
+}
+
+/* Dropdown menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #014f86;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown li {
+  padding: 5px 10px;
+}
+
+.dropdown li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s ease-in-out;
+}
+
+.dropdown li a:hover {
+  background: #012d4f;
+}
+
+/* Dropdown po najechaniu */
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+/* Przycisk logowania */
+.auth-button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.auth-button button {
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background 0.3s ease-in-out;
+}
+
+.auth-button button:hover {
+  background: #e64a19;
+}
+
+/* --- Sekcja Features ----*/
+.features {
+  max-width: 1400px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.feature-text {
+  flex: 1;
+  padding: 20px;
+  text-align: justify;
+  max-width: 650px;
+}
+
+.feature-text h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.feature-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer {
+  background: #005792;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* --- Responsywność --- */
+@media (max-width: 1200px) {
+  .features {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .feature-row {
+    gap: 50px;
+  }
+
+  .feature-image img {
+    max-width: 500px;
+  }
+
+  .feature-text {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .feature-row.reverse {
+    flex-direction: column;
+  }
+
+  .feature-text {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .feature-image img {
+    max-width: 100%;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+}

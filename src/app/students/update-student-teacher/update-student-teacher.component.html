@@ -1,0 +1,32 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Zaktualizuj nauczyciela studenta</h2>
+
+    <div class="input-group">
+      <label for="studentId">ID studenta:</label>
+      <input id="studentId" type="number" [(ngModel)]="studentId" placeholder="Wpisz ID studenta" />
+    </div>
+
+    <div class="input-group">
+      <label for="newTeacherId">Nowe ID nauczyciela:</label>
+      <input id="newTeacherId" type="number" [(ngModel)]="newTeacherId" placeholder="Wpisz nowe ID nauczyciela" />
+    </div>
+
+    <button (click)="updateStudentTeacher()">Zaktualizuj</button>
+  </div>
+
+  <div *ngIf="responseMessage" class="response-message">
+    <p>{{ responseMessage }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

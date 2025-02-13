@@ -1,0 +1,22 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <img src="assets/logo.png" alt="Logo" class="logo" (click)="goToDashboard()">
+</header>
+
+<main class="container">
+  <h2>Usuń nauczyciela po ID</h2>
+
+  <div class="input-group">
+    <label for="teacherId">Podaj ID nauczyciela do usunięcia:</label>
+    <input id="teacherId" type="text" [(ngModel)]="teacherId" placeholder="Wpisz ID nauczyciela">
+    <button (click)="deleteTeacher()">Usuń</button>
+  </div>
+
+  <div *ngIf="message" class="message">
+    <p>{{ message }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

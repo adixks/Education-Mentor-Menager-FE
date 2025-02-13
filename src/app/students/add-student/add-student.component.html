@@ -1,0 +1,38 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Dodaj nowego studenta</h2>
+
+    <label for="firstName">Imię studenta:</label>
+    <input id="firstName" type="text" [(ngModel)]="student.firstName" placeholder="Wpisz imię" />
+
+    <label for="lastName">Nazwisko studenta:</label>
+    <input id="lastName" type="text" [(ngModel)]="student.lastName" placeholder="Wpisz nazwisko" />
+
+    <label for="language">Język studenta:</label>
+    <input id="language" type="text" [(ngModel)]="student.language" placeholder="Np. Angielski" />
+
+    <label for="teacherId">ID nauczyciela:</label>
+    <input id="teacherId" type="number" [(ngModel)]="student.teacherId" placeholder="Podaj ID nauczyciela" />
+
+    <label for="password">Hasło studenta:</label>
+    <input id="password" type="password" [(ngModel)]="student.password" placeholder="Wpisz hasło" />
+
+    <button (click)="addStudent()">Dodaj Studenta</button>
+  </div>
+
+  <div *ngIf="responseMessage" class="student-info">
+    <h3>📢 Status dodania studenta</h3>
+    <p>{{ responseMessage }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

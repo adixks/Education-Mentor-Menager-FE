@@ -1,0 +1,27 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo Education Mentor Manager" />
+  </div>
+</header>
+
+<main class="container">
+  <h2>Pobierz lekcję po ID</h2>
+
+  <div class="input-group">
+    <label for="lessonId">Podaj ID lekcji:</label>
+    <input id="lessonId" type="text" [(ngModel)]="lessonId" placeholder="Wpisz ID lekcji" />
+    <button (click)="fetchLesson()">Pobierz</button>
+  </div>
+
+  <div *ngIf="lesson" class="lesson-info">
+    <h3>Dane lekcji</h3>
+    <p><strong>ID Studenta:</strong> {{ lesson.studentId }}</p>
+    <p><strong>ID Nauczyciela:</strong> {{ lesson.teacherId }}</p>
+    <p><strong>Data:</strong> {{ lesson.date }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

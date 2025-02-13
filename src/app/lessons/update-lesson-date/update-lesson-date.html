@@ -1,0 +1,28 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo Education Mentor Manager" (click)="goToDashboard()" />
+  </div>
+</header>
+
+<main class="container">
+  <h2>Zmień datę lekcji</h2>
+
+  <form (ngSubmit)="updateLessonDate()">
+    <div class="input-group">
+      <label for="lessonId">ID lekcji:</label>
+      <input id="lessonId" type="text" [(ngModel)]="lessonId" name="lessonId" placeholder="Podaj ID lekcji" required />
+    </div>
+
+    <div class="input-group">
+      <label for="date">Nowa data lekcji:</label>
+      <input id="date" type="datetime-local" [(ngModel)]="date" name="date" required />
+    </div>
+
+    <button type="submit" class="submit-button">Zmień datę</button>
+  </form>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

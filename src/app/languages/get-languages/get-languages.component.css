@@ -1,0 +1,75 @@
+/* ✅ Pasek nagłówka */
+.header {
+  background: #005792;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ✅ Przycisk Powrót */
+.back-button {
+  background: white;
+  color: #005792;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.back-button:hover {
+  background: #014f86;
+  color: white;
+}
+
+/* ✅ Logo */
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* ✅ Główna sekcja */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ✅ Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #005792;
+  color: white;
+}
+
+/* ✅ Stopka */
+.footer {
+  background: #005792;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}

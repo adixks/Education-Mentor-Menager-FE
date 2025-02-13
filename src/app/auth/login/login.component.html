@@ -1,0 +1,22 @@
+<div class="login-container">
+  <h2>Logowanie</h2>
+  <form (ngSubmit)="login()">
+    <div class="input-group">
+      <label for="username">Login</label>
+      <input id="username" type="text" placeholder="Wpisz login" [(ngModel)]="username" name="username" required>
+    </div>
+
+    <div class="input-group">
+      <label for="password">Hasło</label>
+      <input id="password" type="password" placeholder="Wpisz hasło" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <button type="submit" class="login-button">Zaloguj się</button>
+  </form>
+
+  <div class="register-section">
+    <p>Nie masz konta?</p>
+    <button (click)="goToRegister()" class="register-button">Zarejestruj się</button>
+  </div>
+</div>
+

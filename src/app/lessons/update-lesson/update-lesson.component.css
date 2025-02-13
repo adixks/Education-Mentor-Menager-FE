@@ -1,0 +1,92 @@
+/* Nagłówek */
+.header {
+  background: #005792;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 20px;
+  background: white;
+  color: #005792;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #014f86;
+  color: white;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Główna sekcja */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #005792;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background: #005792;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: #014f86;
+}
+
+/* Stopka */
+.footer {
+  background: #005792;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}

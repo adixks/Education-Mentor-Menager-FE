@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/logo.png" alt="Logo ITCode" class="clickable-logo" />
+      </a>
+    </div>
+    <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  </div>
+</header>
+
+<main class="container">
+  <div class="table-container">
+    <h2 class="table-title">Lista nauczycieli</h2>
+    <p class="table-description">Przeglądaj listę dostępnych nauczycieli oraz ich języki.</p>
+
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Języki</th>
+        <th>Akcje</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let teacher of teachers">
+        <td>{{ teacher.id }}</td>
+        <td>{{ teacher.firstName }}</td>
+        <td>{{ teacher.lastName }}</td>
+        <td>{{ teacher.languages.length ? teacher.languages.join(', ') : 'Brak języków' }}</td>
+        <td>
+          <a [routerLink]="['/teacher-by-id', teacher.id]">Szczegóły</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="pageNumber === 0">◀ Poprzednia</button>
+      <span>Strona {{ pageNumber + 1 }} z {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="pageNumber >= totalPages - 1">Następna ▶</button>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Education Mentor Manager. All rights reserved.</p>
+</footer>

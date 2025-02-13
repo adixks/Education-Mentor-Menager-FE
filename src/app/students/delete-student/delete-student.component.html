@@ -1,0 +1,23 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Usuń studenta</h2>
+    <label for="studentId">Podaj ID studenta:</label>
+    <input id="studentId" type="number" [(ngModel)]="studentId" placeholder="Wpisz ID studenta" />
+    <button (click)="deleteStudent()">Usuń</button>
+  </div>
+
+  <div *ngIf="responseMessage" class="response-message">
+    <p>{{ responseMessage }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

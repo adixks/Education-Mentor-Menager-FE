@@ -1,0 +1,27 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Pobierz nauczyciela po ID</h2>
+    <label for="teacherId">Podaj ID nauczyciela:</label>
+    <input id="teacherId" type="text" [(ngModel)]="teacherId" placeholder="Wpisz ID" />
+    <button (click)="fetchTeacher()">Pobierz</button>
+  </div>
+
+  <div *ngIf="teacher" class="teacher-info">
+    <h3>Dane nauczyciela</h3>
+    <p><strong>ID:</strong> {{ teacher.id }}</p>
+    <p><strong>Imię:</strong> {{ teacher.firstName }}</p>
+    <p><strong>Nazwisko:</strong> {{ teacher.lastName }}</p>
+    <p><strong>Języki:</strong> {{ teacher.languages.length ? teacher.languages.join(', ') : 'Brak języków' }}</p>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

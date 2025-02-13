@@ -1,0 +1,131 @@
+/* ✅ Nagłówek w pełnej szerokości */
+.header {
+  background: #005792;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 70px;
+}
+
+/* ✅ Logo i przycisk */
+.header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* ✅ Wyśrodkowanie logo */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  height: 60px;
+  cursor: pointer;
+}
+
+/* ✅ Styl dla przycisku powrotu */
+.back-button {
+  background: white;
+  color: #005792;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #014f86;
+  color: white;
+}
+
+/* ✅ Główna sekcja */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #005792;
+}
+
+.table-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #005792;
+  text-align: center;
+}
+
+th {
+  background: #005792;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ✅ Paginacja */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background: #005792;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.pagination button:hover {
+  background: #014f86;
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ✅ Stopka */
+footer {
+  background: #005792;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}

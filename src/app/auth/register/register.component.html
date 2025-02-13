@@ -1,0 +1,39 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Rejestracja użytkownika</h2>
+
+    <label for="firstName">Imię:</label>
+    <input id="firstName" type="text" [(ngModel)]="firstName" placeholder="Wpisz imię" />
+
+    <label for="lastName">Nazwisko:</label>
+    <input id="lastName" type="text" [(ngModel)]="lastName" placeholder="Wpisz nazwisko" />
+
+    <label for="language">Język:</label>
+    <input id="language" type="text" [(ngModel)]="language" placeholder="Np. Angielski" />
+
+    <label for="role">Rola:</label>
+    <select id="role" [(ngModel)]="role">
+      <option value="">Wybierz...</option>
+      <option value="STUDENT">Student</option>
+      <option value="TEACHER">Nauczyciel</option>
+    </select>
+
+    <div *ngIf="role === 'STUDENT'">
+      <label for="teacherId">ID nauczyciela:</label>
+      <input id="teacherId" type="number" [(ngModel)]="teacherId" placeholder="Podaj ID nauczyciela" />
+    </div>
+
+    <button (click)="register()">Zarejestruj</button>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

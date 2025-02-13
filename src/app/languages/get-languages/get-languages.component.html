@@ -1,0 +1,31 @@
+<div class="header">
+  <button class="back-button" routerLink="/">Powrót</button>
+
+  <div class="logo-container">
+    <a routerLink="/">
+      <img src="assets/logo.png" alt="Logo ITCode" class="logo">
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Lista języków</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa języka</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let language of languages">
+      <td>{{ language.id }}</td>
+      <td>{{ language.name }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</div>

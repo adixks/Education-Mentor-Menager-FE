@@ -1,0 +1,34 @@
+<header class="header">
+  <button class="back-button" (click)="goToDashboard()">Powrót</button>
+  <div class="logo" (click)="goToDashboard()">
+    <img src="assets/logo.png" alt="Logo ITCode" />
+  </div>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Dodaj lekcję</h2>
+    <form (ngSubmit)="addLesson()">
+      <div class="input-group">
+        <label for="studentId">ID ucznia:</label>
+        <input id="studentId" type="text" [(ngModel)]="studentId" name="studentId" placeholder="Podaj ID ucznia" required />
+      </div>
+
+      <div class="input-group">
+        <label for="teacherId">ID nauczyciela:</label>
+        <input id="teacherId" type="text" [(ngModel)]="teacherId" name="teacherId" placeholder="Podaj ID nauczyciela" required />
+      </div>
+
+      <div class="input-group">
+        <label for="date">Data lekcji:</label>
+        <input id="date" type="datetime-local" [(ngModel)]="date" name="date" required />
+      </div>
+
+      <button type="submit" class="submit-button">Dodaj lekcję</button>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  © 2025 Education Mentor Manager. All rights reserved.
+</footer>

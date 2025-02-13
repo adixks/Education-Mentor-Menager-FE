@@ -1,0 +1,117 @@
+<header>
+  <div class="logo">
+    <a routerLink="/"> <!-- Logo jako link do strony głównej -->
+      <img src="assets/logo.png" alt="Logo Education Mentor Manager" />
+    </a>
+  </div>
+
+  <nav *ngIf="isLoggedIn()"> <!-- Menu widoczne tylko po zalogowaniu -->
+    <ul class="menu">
+
+      <!-- ✅ Sekcja dla ADMINA -->
+      <li class="menu-item" *ngIf="isAdmin() || isTeacher() || isStudent()">
+        <a href="#">Nauczyciele</a>
+        <ul class="dropdown">
+          <li><button (click)="goToTeachers()">Pobierz listę nauczycieli</button></li>
+          <li *ngIf="isAdmin() || isTeacher()"><button (click)="goToTeacherById()">Pobierz nauczyciela po ID</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToAddTeacher()">Dodaj nauczyciela</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToUpdateTeacherLanguages()">Zaktualizuj języki nauczyciela</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToDeleteTeacher()">Usuń nauczyciela</button></li>
+        </ul>
+      </li>
+
+      <!-- ✅ Sekcja dla TEACHERA i ADMINA -->
+      <li class="menu-item" *ngIf="isAdmin() || isTeacher() || isStudent()">
+        <a href="#">Lekcje</a>
+        <ul class="dropdown">
+          <li><button (click)="goToLessons()">Pobierz listę lekcji</button></li>
+          <li><button (click)="goToLessonById()">Pobierz lekcję po ID</button></li>
+          <li><button (click)="goToAddLesson()">Dodaj lekcję</button></li>
+          <li *ngIf="isAdmin() || isTeacher()"><button (click)="goToUpdateLesson()">Zaktualizuj lekcję</button></li>
+          <li *ngIf="isAdmin() || isTeacher()"><button (click)="goToUpdateLessonDate()">Zmień datę lekcji</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToDeleteLesson()">Usuń lekcję</button></li>
+        </ul>
+      </li>
+
+      <!-- ✅ Sekcja dla TEACHERA, STUDENTA i ADMINA -->
+      <li class="menu-item" *ngIf="isAdmin() || isTeacher() || isStudent()">
+        <a href="#">Języki</a>
+        <ul class="dropdown">
+          <li><button (click)="goToLanguages()">Pobierz listę języków</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToAddLanguage()">Dodaj język</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToDeleteLanguage()">Usuń język</button></li>
+        </ul>
+      </li>
+
+      <!-- ✅ Sekcja dla ADMINA i TEACHERA -->
+      <li class="menu-item" *ngIf="isAdmin() || isTeacher()">
+        <a href="#">Studenci</a>
+        <ul class="dropdown">
+          <li><button (click)="goToStudents()">Pobierz listę studentów</button></li>
+          <li><button (click)="goToStudentById()">Pobierz studenta po ID</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToAddStudent()">Dodaj studenta</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToUpdateStudentTeacher()">Zaktualizuj nauczyciela studenta</button></li>
+          <li *ngIf="isAdmin()"><button (click)="goToDeleteStudent()">Usuń studenta</button></li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="auth-button">
+    <button *ngIf="!isLoggedIn()" (click)="login()">Zaloguj</button>
+    <button *ngIf="isLoggedIn()" (click)="logout()">Wyloguj</button>
+  </div>
+</header>
+
+<main>
+  <!-- Sekcja "szachownicy" z obrazkami i tekstem -->
+  <section class="features">
+    <div class="feature-row">
+      <div class="feature-image">
+        <img src="assets/img1.jpg" alt="Najlepsi Nauczyciele" />
+      </div>
+      <div class="feature-text">
+        <h3>Dlaczego my?</h3>
+        <p>
+          Nasi najlepsi nauczyciele przekazują sprawdzone metody, które pomagają w skutecznym rozwoju umiejętności.
+          Dzięki ich doświadczeniu i indywidualnemu podejściu nauka staje się bardziej efektywna i przyjemna.
+          Stawiamy na praktyczne podejście, abyś mógł natychmiast zastosować zdobytą wiedzę w realnych sytuacjach.
+          To właśnie dzięki najlepszym praktykom i wsparciu ekspertów szybciej osiągniesz swoje cele i zbudujesz solidne fundamenty dla dalszego rozwoju.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row reverse">
+      <div class="feature-image">
+        <img src="assets/img2.jpg" alt="Innowacyjne Metody Nauczania" />
+      </div>
+      <div class="feature-text">
+        <h3>Innowacyjne Metody</h3>
+        <p>
+          Nowoczesne techniki nauczania sprawiają, że lekcje są bardziej efektywne i angażujące.
+          Dzięki innowacyjnym metodom nauka staje się dynamiczna i dostosowana do indywidualnych potrzeb uczniów.
+          Interaktywne podejście pobudza ciekawość, ułatwia przyswajanie wiedzy i motywuje do dalszego rozwoju.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-image">
+        <img src="assets/img3.jpg" alt="Wyniki i Sukces" />
+      </div>
+      <div class="feature-text">
+        <h3>Wyniki i Sukces</h3>
+        <p>
+          Nasze podejście gwarantuje sukces, co potwierdzają liczne referencje i pozytywne opinie.
+          Wysoka jakość kształcenia opiera się na sprawdzonych metodach oraz indywidualnym podejściu do każdego ucznia.
+          Zaufanie naszych kursantów to najlepszy dowód na skuteczność nauczania i realne efekty.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Education Mentor Manager. All rights reserved.</p>
+</footer>

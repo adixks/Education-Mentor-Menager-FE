@@ -1,0 +1,101 @@
+/* Pasek górny */
+.header {
+  background: #005792;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Przycisk powrotu */
+.back-button {
+  background: white;
+  color: #005792;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #014f86;
+  color: white;
+}
+
+/* Logo na środku */
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 60px;
+  cursor: pointer;
+}
+
+/* Kontener dla treści */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #005792;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Przycisk */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background: #005792;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: #014f86;
+}
+
+/* Stopka */
+.footer {
+  background: #005792;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
