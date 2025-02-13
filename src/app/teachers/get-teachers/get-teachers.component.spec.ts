@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 interface Teacher {
 id: number;
@@ -15,9 +16,9 @@ templateUrl: './get-teachers.component.html',
 styleUrls: ['./get-teachers.component.css'],
 imports: [CommonModule] // ✅ Required for *ngFor
 })
-export class GetTeachersComponent {
+export class GetTeachersComponent implements OnInit {
 teachers: Teacher[] = [];
-apiUrl = 'http://localhost:8080/api/v1/teachers';
+apiUrl = `${environment.apiUrl}/teachers`;
 
 constructor(private http: HttpClient) {}
 
@@ -29,7 +30,7 @@ constructor(private http: HttpClient) {}
     const token = localStorage.getItem('authToken');
 
     if (!token) {
-      console.error('Brak tokena! Użytkownik nie jest zalogowany.');
+      console.error('⛔ Brak tokena! Użytkownik nie jest zalogowany.');
       return;
     }
 
@@ -41,9 +42,10 @@ constructor(private http: HttpClient) {}
     this.http.get<Teacher[]>(this.apiUrl, { headers }).subscribe({
       next: (data) => {
         this.teachers = data;
+        console.log('✅ Nauczyciele pobrani:', this.teachers);
       },
       error: (err) => {
-        console.error('Błąd pobierania nauczycieli:', err);
+        console.error('❌ Błąd pobierania nauczycieli:', err);
       }
     });
   }

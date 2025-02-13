@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { API_CONFIG } from '../config/api-config';
 
 interface Lesson {
 studentId: number;
@@ -21,7 +22,7 @@ imports: [CommonModule, RouterModule, FormsModule]
 export class GetLessonByIdComponent {
 lesson: Lesson | null = null;
 lessonId: string = '';
-apiUrl = 'http://localhost:8080/api/v1/lessons';
+apiUrl = '${API_CONFIG.baseUrl}/lessons';
 
 constructor(private http: HttpClient, private router: Router) {}
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { API_CONFIG } from '../config/api-config';
 
 @Component({
 selector: 'app-get-students',
@@ -12,7 +13,7 @@ imports: [CommonModule, RouterModule]
 })
 export class GetStudentsComponent implements OnInit {
 students: any[] = [];
-apiUrl = 'http://localhost:8080/api/v1/students';
+apiUrl = '${API_CONFIG.baseUrl}/students';
 
 constructor(private http: HttpClient, private router: Router) {}
 

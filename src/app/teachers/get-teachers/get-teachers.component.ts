@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 interface Teacher {
 id: number;
@@ -21,7 +22,7 @@ imports: [CommonModule, RouterModule, HttpClientModule]
 })
 export class GetTeachersComponent implements OnInit {
 teachers: Teacher[] = [];
-apiUrl = 'http://localhost:8080/api/v1/teachers';
+apiUrl = `${environment.apiUrl}/teachers`;
 
 pageNumber = 0;
 totalPages = 1;

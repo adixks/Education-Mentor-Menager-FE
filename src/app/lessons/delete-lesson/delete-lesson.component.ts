@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { API_CONFIG } from '../config/api-config';
 
 @Component({
 selector: 'app-delete-lesson',
@@ -14,7 +15,7 @@ imports: [CommonModule, FormsModule, RouterModule]
 })
 export class DeleteLessonComponent {
 lessonId: string = '';
-apiUrl = 'http://localhost:8080/api/v1/lessons';
+apiUrl = '${API_CONFIG.baseUrl}/lessons';
 
 constructor(private http: HttpClient, private router: Router) {}
 
