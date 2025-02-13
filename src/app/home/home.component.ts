@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 
 @Component({
 selector: 'app-home',
 standalone: true,
 templateUrl: './home.component.html',
 styleUrls: ['./home.component.css'],
-imports: [CommonModule, RouterModule]
+imports: [CommonModule] // ⬅️ Dodano CommonModule do imports
 })
 export class HomeComponent {
 userRole: string | null = null;
 
-constructor(private router: Router) {
-    this.setUserRole();
+constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: object) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setUserRole();
+    }
   }
 
-ngOnInit(): void {
-    this.setUserRole();
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setUserRole();
+    }
   }
 
   setUserRole(): void {
-    if (typeof window !== 'undefined' && localStorage) {
+    if (isPlatformBrowser(this.platformId)) {
       const token = localStorage.getItem('authToken');
       if (token) {
         try {
@@ -57,13 +60,10 @@ ngOnInit(): void {
     this.router.navigate(['/login']);
   }
 
-  goToRegister(): void {
-    console.log('🔹 Przenosi do wyboru rejestracji jako student/nauczyciel...');
-    this.router.navigate(['/register-choice']);
-  }
-
   logout(): void {
-    localStorage.removeItem('authToken');
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('authToken');
+    }
     this.userRole = null;
     this.router.navigate(['/']);
   }
