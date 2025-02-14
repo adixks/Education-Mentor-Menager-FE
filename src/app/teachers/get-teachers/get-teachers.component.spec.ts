@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { environment } from 'src/environments/environment';
+import { API_CONFIG } from '../../config/api-config';
 
 interface Teacher {
 id: number;
@@ -18,7 +18,7 @@ imports: [CommonModule] // ✅ Required for *ngFor
 })
 export class GetTeachersComponent implements OnInit {
 teachers: Teacher[] = [];
-apiUrl = `${environment.apiUrl}/teachers`;
+apiUrl = '${API_CONFIG.baseUrl}/teachers`;
 
 constructor(private http: HttpClient) {}
 
