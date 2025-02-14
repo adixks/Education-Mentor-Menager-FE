@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { API_CONFIG } from '../config/api-config';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-get-students',

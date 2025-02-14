@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { API_CONFIG } from '../config/api-config';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-update-lesson',

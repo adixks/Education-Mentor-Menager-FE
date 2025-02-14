@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { API_CONFIG } from '../config/api-config';
+import { API_CONFIG } from '../../config/api-config';
 
 interface Student {
 id: number;

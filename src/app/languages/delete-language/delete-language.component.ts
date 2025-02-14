@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { API_CONFIG } from '../config/api-config';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-delete-language',

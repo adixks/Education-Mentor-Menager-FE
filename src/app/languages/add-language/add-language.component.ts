@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { API_CONFIG } from '../config/api-config';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-add-language',
