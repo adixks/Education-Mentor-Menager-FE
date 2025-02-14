@@ -16,7 +16,7 @@ imports: [CommonModule, FormsModule, RouterModule]
 export class DeleteTeacherComponent {
 teacherId: string = '';
 message: string | null = null;
-apiUrl = `${API_CONFIG.baseUrl}/teachers';
+apiUrl = `${API_CONFIG.baseUrl}/teachers`;
 
 constructor(private http: HttpClient, private router: Router) {}
 

@@ -17,7 +17,7 @@ export class GetLessonsComponent {
 lessons: any[] = [];
 pageNumber = 0;
 totalPages = 1;
-apiUrl = `${API_CONFIG.baseUrl}/lessons';
+apiUrl = `${API_CONFIG.baseUrl}/lessons`;
 
 constructor(private http: HttpClient, private router: Router) {}
 

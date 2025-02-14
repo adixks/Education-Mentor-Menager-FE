@@ -16,7 +16,7 @@ imports: [CommonModule, FormsModule, RouterModule]
 export class UpdateLessonDateComponent {
 lessonId: string = '';
 date: string = '';
-apiUrl = `${API_CONFIG.baseUrl}/lessons';
+apiUrl = `${API_CONFIG.baseUrl}/lessons`;
 
 constructor(private http: HttpClient, private router: Router) {}
 

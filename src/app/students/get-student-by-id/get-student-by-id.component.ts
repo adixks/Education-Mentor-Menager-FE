@@ -24,7 +24,7 @@ imports: [CommonModule, RouterModule, FormsModule, HttpClientModule]
 export class GetStudentByIdComponent implements OnInit {
 student: Student | null = null;
 studentId: string = '';
-apiUrl = `${API_CONFIG.baseUrl}/students';
+apiUrl = `${API_CONFIG.baseUrl}/students`;
 
 constructor(
     private http: HttpClient,

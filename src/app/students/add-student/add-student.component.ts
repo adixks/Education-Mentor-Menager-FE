@@ -31,7 +31,7 @@ password: ''
 };
 
 responseMessage: string = '';
-apiUrl = `${API_CONFIG.baseUrl}/students';
+apiUrl = `${API_CONFIG.baseUrl}/students`;
 
 constructor(private http: HttpClient, private router: Router) {}
 
