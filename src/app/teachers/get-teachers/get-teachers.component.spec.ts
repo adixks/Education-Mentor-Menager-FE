@@ -18,7 +18,7 @@ imports: [CommonModule] // ✅ Required for *ngFor
 })
 export class GetTeachersComponent implements OnInit {
 teachers: Teacher[] = [];
-apiUrl = '${API_CONFIG.baseUrl}/teachers`;
+apiUrl = `${API_CONFIG.baseUrl}/teachers`;
 
 constructor(private http: HttpClient) {}
 

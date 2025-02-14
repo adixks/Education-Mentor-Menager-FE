@@ -14,7 +14,7 @@ imports: [FormsModule, CommonModule]
 })
 export class DeleteLanguageComponent {
 languageId: number = 0;
-apiUrl = '${API_CONFIG.baseUrl}/language';
+apiUrl = `${API_CONFIG.baseUrl}/language';
 
 constructor(private http: HttpClient, private router: Router) {}
 

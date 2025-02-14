@@ -17,7 +17,7 @@ export class UpdateStudentTeacherComponent {
 studentId: number = 0;
 newTeacherId: number = 0;
 responseMessage: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/students';
+apiUrl = `${API_CONFIG.baseUrl}/students';
 
 constructor(private http: HttpClient, private router: Router) {}
 

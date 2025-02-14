@@ -17,7 +17,7 @@ export class AddLessonComponent {
 studentId: string = '';
 teacherId: string = '';
 date: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/lessons';
+apiUrl = `${API_CONFIG.baseUrl}/lessons';
 
 constructor(private http: HttpClient, private router: Router) {}
 

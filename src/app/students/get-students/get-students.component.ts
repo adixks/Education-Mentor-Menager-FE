@@ -13,7 +13,7 @@ imports: [CommonModule, RouterModule]
 })
 export class GetStudentsComponent implements OnInit {
 students: any[] = [];
-apiUrl = '${API_CONFIG.baseUrl}/students';
+apiUrl = `${API_CONFIG.baseUrl}/students';
 
 constructor(private http: HttpClient, private router: Router) {}
 

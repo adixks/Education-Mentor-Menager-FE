@@ -16,7 +16,7 @@ imports: [CommonModule, RouterModule, FormsModule]
 export class UpdateTeacherLanguagesComponent {
 teacherId: string = '';
 languages: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/teachers';
+apiUrl = `${API_CONFIG.baseUrl}/teachers';
 
 constructor(private http: HttpClient, private router: Router) {}
 

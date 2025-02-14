@@ -14,7 +14,7 @@ imports: [CommonModule, RouterModule, FormsModule]
 })
 export class AddLanguageComponent {
 languageName: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/language';
+apiUrl = `${API_CONFIG.baseUrl}/language';
 
 constructor(private http: HttpClient, private router: Router) {}
 

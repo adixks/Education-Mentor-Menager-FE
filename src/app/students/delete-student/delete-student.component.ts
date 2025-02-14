@@ -16,7 +16,7 @@ imports: [CommonModule, FormsModule, HttpClientModule]
 export class DeleteStudentComponent {
 studentId: number = 0;
 responseMessage: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/students';
+apiUrl = `${API_CONFIG.baseUrl}/students';
 
 constructor(private http: HttpClient, private router: Router) {}
 

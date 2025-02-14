@@ -22,7 +22,7 @@ imports: [CommonModule, RouterModule, HttpClientModule]
 })
 export class GetTeachersComponent implements OnInit {
 teachers: Teacher[] = [];
-apiUrl = '${API_CONFIG.baseUrl}/teachers`;
+apiUrl = `${API_CONFIG.baseUrl}/teachers`;
 
 pageNumber = 0;
 totalPages = 1;

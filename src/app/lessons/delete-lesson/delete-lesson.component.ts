@@ -15,7 +15,7 @@ imports: [CommonModule, FormsModule, RouterModule]
 })
 export class DeleteLessonComponent {
 lessonId: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/lessons';
+apiUrl = `${API_CONFIG.baseUrl}/lessons';
 
 constructor(private http: HttpClient, private router: Router) {}
 

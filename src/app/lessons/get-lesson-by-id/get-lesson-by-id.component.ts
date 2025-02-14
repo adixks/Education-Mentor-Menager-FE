@@ -22,7 +22,7 @@ imports: [CommonModule, RouterModule, FormsModule]
 export class GetLessonByIdComponent {
 lesson: Lesson | null = null;
 lessonId: string = '';
-apiUrl = '${API_CONFIG.baseUrl}/lessons';
+apiUrl = `${API_CONFIG.baseUrl}/lessons';
 
 constructor(private http: HttpClient, private router: Router) {}
 
