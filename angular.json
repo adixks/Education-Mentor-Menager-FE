@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/education-mentor-manager-fe",
+            "outputPath": "dist/Education-Mentor-Menager-FE",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -93,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
