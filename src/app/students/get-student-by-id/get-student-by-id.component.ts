@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { API_CONFIG } from '../../config/api-config';
 
 interface Student {
 id: number;
@@ -23,7 +24,7 @@ imports: [CommonModule, RouterModule, FormsModule, HttpClientModule]
 export class GetStudentByIdComponent implements OnInit {
 student: Student | null = null;
 studentId: string = '';
-apiUrl = 'http://localhost:8080/api/v1/students';
+apiUrl = `${API_CONFIG.baseUrl}/students`;
 
 constructor(
     private http: HttpClient,

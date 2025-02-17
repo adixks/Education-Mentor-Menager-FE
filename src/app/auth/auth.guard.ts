@@ -1,13 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
 providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-constructor(private router: Router) {}
+constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: object) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (!isPlatformBrowser(this.platformId)) {
+      // ⛔ SSR: Nie odwołujemy się do localStorage na serwerze
+      return false;
+    }
+
     const token = localStorage.getItem('authToken');
     const userRole = localStorage.getItem('userRole')?.trim();
 

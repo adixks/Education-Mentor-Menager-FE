@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-delete-language',
@@ -13,7 +14,7 @@ imports: [FormsModule, CommonModule]
 })
 export class DeleteLanguageComponent {
 languageId: number = 0;
-apiUrl = 'http://localhost:8080/api/v1/language';
+apiUrl = `${API_CONFIG.baseUrl}/language`;
 
 constructor(private http: HttpClient, private router: Router) {}
 

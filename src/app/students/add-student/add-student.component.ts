@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { API_CONFIG } from '../../config/api-config';
 
 interface Student {
 firstName: string;
@@ -30,7 +31,7 @@ password: ''
 };
 
 responseMessage: string = '';
-apiUrl = 'http://localhost:8080/api/v1/students';
+apiUrl = `${API_CONFIG.baseUrl}/students`;
 
 constructor(private http: HttpClient, private router: Router) {}
 

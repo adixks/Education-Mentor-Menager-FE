@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-add-teacher',
@@ -17,7 +18,7 @@ firstName: string = '';
 lastName: string = '';
 password: string = '';
 languages: string = '';
-apiUrl = 'http://localhost:8080/api/v1/teachers';
+apiUrl = `${API_CONFIG.baseUrl}/teachers`;
 
 constructor(private http: HttpClient, private router: Router) {}
 
