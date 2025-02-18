@@ -42,7 +42,7 @@ constructor(private http: HttpClient, private router: Router) {}
     this.http.post(`${this.apiUrl}`, teacher, { headers }).subscribe({
       next: () => {
         alert('✅ Nauczyciel został dodany pomyślnie! Możesz się teraz zalogować.');
-        this.router.navigate(['/login']); // ❗ Przekierowanie na logowanie po rejestracji
+        this.router.navigate(['/']);
       },
       error: (err) => {
         console.error('❌ Błąd podczas dodawania nauczyciela:', err);
