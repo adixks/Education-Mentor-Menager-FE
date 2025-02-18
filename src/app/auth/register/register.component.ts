@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-register',
@@ -43,7 +44,7 @@ constructor(private http: HttpClient, private router: Router) {}
       'Content-Type': 'application/json'
     });
 
-    this.http.post<any>('http://localhost:8080/api/v1/auth/register', user, { headers }).subscribe({
+    this.http.post<any>(`${API_CONFIG.baseUrl}/auth/register`, user, { headers }).subscribe({
       next: (response) => {
         if (response.token && response.role) {
           localStorage.setItem('authToken', response.token);
