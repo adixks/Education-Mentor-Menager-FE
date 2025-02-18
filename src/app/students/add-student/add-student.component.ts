@@ -10,7 +10,7 @@ interface Student {
 firstName: string;
 lastName: string;
 language: string;
-teacherId?: number; // ❗ Zmieniono na opcjonalne pole
+teacherId?: number;
 password: string;
 }
 
@@ -53,7 +53,7 @@ constructor(private http: HttpClient, private router: Router) {}
         this.responseMessage = `✅ Student ${data.firstName} ${data.lastName} został dodany!`;
 
         alert('✅ Rejestracja zakończona sukcesem! Możesz się teraz zalogować.');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       error: (err) => {
         console.error('❌ Błąd dodawania studenta:', err);
