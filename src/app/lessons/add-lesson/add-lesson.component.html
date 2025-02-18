@@ -8,24 +8,40 @@
 <main class="container">
   <div class="card">
     <h2>Dodaj lekcję</h2>
-    <form (ngSubmit)="addLesson()">
-      <div class="input-group">
-        <label for="studentId">ID ucznia:</label>
-        <input id="studentId" type="text" [(ngModel)]="studentId" name="studentId" placeholder="Podaj ID ucznia" required />
-      </div>
+    <div class="input-group">
+      <label for="studentId">ID ucznia:</label>
+      <input id="studentId" type="text" [(ngModel)]="studentId" name="studentId" placeholder="Podaj ID ucznia" />
+    </div>
 
-      <div class="input-group">
-        <label for="teacherId">ID nauczyciela:</label>
-        <input id="teacherId" type="text" [(ngModel)]="teacherId" name="teacherId" placeholder="Podaj ID nauczyciela" required />
-      </div>
+    <div class="input-group">
+      <label for="teacherId">ID nauczyciela:</label>
+      <input id="teacherId" type="text" [(ngModel)]="teacherId" name="teacherId" placeholder="Podaj ID nauczyciela" />
+    </div>
 
-      <div class="input-group">
-        <label for="date">Data lekcji:</label>
-        <input id="date" type="datetime-local" [(ngModel)]="date" name="date" required />
+    <div class="input-group">
+      <label for="selectedDate">Data (dzień):</label>
+      <input id="selectedDate" type="date" [(ngModel)]="selectedDate" name="selectedDate" />
+    </div>
+    <button (click)="loadFreeSlots()" class="submit-button" style="margin-bottom: 20px;">
+      Pokaż wolne godziny
+    </button>
+    <div *ngIf="freeSlots.length > 0">
+      <p>Wybierz godzinę rozpoczęcia (1h):</p>
+      <div *ngFor="let slot of freeSlots" style="text-align: left;">
+        <label>
+          <input type="radio" name="chosenSlot" [value]="slot" [(ngModel)]="chosenSlot" />
+          {{ slot }}
+        </label>
       </div>
+    </div>
 
-      <button type="submit" class="submit-button">Dodaj lekcję</button>
-    </form>
+    <div *ngIf="freeSlotsLoaded && freeSlots.length === 0" style="margin: 15px 0;">
+      Brak wolnych godzin w wybranym dniu.
+    </div>
+
+    <button (click)="addLesson()" class="submit-button" style="margin-top: 20px;">
+      Dodaj lekcję
+    </button>
   </div>
 </main>
 
