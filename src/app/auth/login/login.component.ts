@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { API_CONFIG } from '../../config/api-config';
 
 @Component({
 selector: 'app-login',
@@ -27,7 +28,7 @@ constructor(private http: HttpClient, private router: Router) {}
 
     console.log('📨 Wysyłanie żądania logowania...', credentials);
 
-    this.http.post<any>('http://localhost:8080/api/v1/auth/login', credentials, { headers }).subscribe({
+    this.http.post<any>(`${API_CONFIG.baseUrl}/auth/login`, credentials, { headers }).subscribe({
       next: (response) => {
         if (response.token && response.role) {
           localStorage.setItem('authToken', response.token);
